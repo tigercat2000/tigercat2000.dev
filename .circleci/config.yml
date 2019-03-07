@@ -31,7 +31,7 @@ jobs:
             git config user.name "ci-build"
       - run:
           name: Deploy to gh-pages
-          command: gh-pages --dist dist
+          command: gh-pages --dist .
 
 workflows:
   version: 2
