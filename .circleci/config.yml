@@ -19,13 +19,6 @@ jobs:
       - run:
           name: Build
           command: npm run build
-      - persist_to_workspace:
-          root: /tmp/workspace
-          paths: 
-            - dist/* 
-      - run:
-          name: Install dependencies
-          command: 
       - run:
           name: Deploy to gh-pages
           command: ls dist
