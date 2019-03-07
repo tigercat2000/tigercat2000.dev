@@ -6,22 +6,25 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Setup workspace.
+          command: mkdir -p /tmp/workspace
+      - run:
           name: Install dependencies
           command: npm install --dev
       - run:
           name: Build
           command: npm run build
       - persist_to_workspace:
-          root: .
+          root: /tmp/workspace
           paths: 
-            - dist/
+            - dist/*
   deploy:
     docker:
       - image: node:10.15.2
     steps:
       - checkout
       - attach_workspace:
-          at: .
+          at: /tmp/workspaec
       - add_ssh_keys:
           fingerprints:
             - "a4:1e:bc:5b:60:cb:9f:34:e6:48:9b:a2:ab:61:bc:34"
@@ -35,6 +38,7 @@ jobs:
       - run:
           name: Deploy to gh-pages
           command: ls
+          # command: gh-pages --dist .
 
 workflows:
   version: 2
