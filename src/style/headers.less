@@ -1,0 +1,11 @@
+@iterations: 6;
+.h(@index) when(@index > 0) {
+	h@{index} {
+		font-size: 72px - @index*10;
+		font-weight: normal;
+		margin: 0;
+	}
+	.h(@index - 1);
+}
+.h(0) {}
+.h(@iterations);
