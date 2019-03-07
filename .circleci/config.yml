@@ -21,5 +21,4 @@ jobs:
           command: npm run build
       - run:
           name: Deploy to gh-pages
-          command: ls dist
-          # command: gh-pages --dist .
+          command: gh-pages --dotfiles --dist dist --message "[skip ci] Updates"
