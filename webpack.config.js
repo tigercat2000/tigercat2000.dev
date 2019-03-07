@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: path.join(__dirname, 'src/app/index.js'),
@@ -42,10 +43,14 @@ module.exports = {
         }]
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src/public/index.html'),
             inject: 'body'
-        })
+        }),
+        new CopyPlugin([
+            { from: 'src/other' },
+        ])
     ],
     devServer: {
         contentBase: './src/public',
