@@ -12,14 +12,15 @@ jobs:
         name: Build
         command: npm run build
       - persist_to_workspace:
-        root: dist
+        root: _build
+        paths: dist
   deploy:
     docker:
       - image: node:10.15.2-alpine
     steps:
       - checkout
       - attach_workspace:
-        at: dist
+        at: _build
       - run:
         name: Install dependencies
         command: |
