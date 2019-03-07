@@ -11,13 +11,29 @@ section {
 	margin-bottom: 10%;
 }
 
-.twogrid {
+.grid {
 	align-items: flex-start;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 }
 
-.twogrid > div {
+.grid > div {
+	margin-bottom: 5%;
+}
+.grid.x2 > div {
 	flex: 1 1 50%;
+}
+
+.languageTable {
+	text-align: left;
+	width: 100%;
+}
+
+.languageTable td:nth-child(2) {
+	text-align: right;
+}
+
+main h4 {
+	border-bottom: 2px solid #000;
 }
