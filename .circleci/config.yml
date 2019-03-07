@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  web-build:
+  build:
     docker:
       - image: node:10.15.2
     steps:
@@ -30,10 +30,3 @@ jobs:
           name: Deploy to gh-pages
           command: ls dist
           # command: gh-pages --dist .
-
-workflows:
-  version: 2
-  build:
-    jobs:
-      - web-build
-      - deploy
