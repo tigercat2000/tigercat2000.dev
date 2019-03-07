@@ -2,7 +2,7 @@ version: 2
 jobs:
   web-build:
     docker:
-      - image: node:10.15.2-alpine
+      - image: node:10.15.2
     steps:
       - checkout
       - run:
@@ -17,7 +17,7 @@ jobs:
             - dist/
   deploy:
     docker:
-      - image: node:10.15.2-alpine
+      - image: node:10.15.2
     steps:
       - checkout
       - attach_workspace:
