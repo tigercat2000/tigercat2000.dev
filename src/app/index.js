@@ -1,11 +1,13 @@
 import '../style/main.less';
 import $ from 'jquery';
+import 'particles.js';
 
 let $window = $(window);
 let $animation_elements = $('.scrollAnimate')
 
 $(document).ready(() => {
 	$window.trigger('scroll');
+	particles();
 })
 
 $window.on('scroll resize', check_if_in_view);
@@ -29,3 +31,9 @@ function check_if_in_view() {
 		}
 	})
 }
+
+function particles() {
+	particlesJS.load('particles', '/particlesjs-config.json', function () {
+		console.log('particle.js loaded.');
+	});
+};

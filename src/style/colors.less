@@ -1,8 +1,22 @@
 @red:   #f00;
 @green: #00d000;
 @blue:  #00f;
+@font:  #fff;
 
 
 .red   { color: @red; }
 .green { color: @green; }
 .blue  { color: @blue; }
+
+// Better link defaults
+@import "https://cdn.jsdelivr.net/npm/links.css@0.0.2/css/links.min.css";
+
+/* ... but we need to tweak it a little for ourselves. */
+a:link, a:visited {
+	color: saturate(lighten(#265C83, 25%), 30%);
+	text-decoration: none;
+}
+
+a:hover {
+	color: lighten(#265C83, 35%);
+}

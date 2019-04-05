@@ -25,15 +25,27 @@ section {
 	flex: 1 1 50%;
 }
 
-.languageTable {
+.table {
 	text-align: left;
 	width: 100%;
 }
 
-.languageTable td:nth-child(2) {
+.table td:nth-child(2) {
 	text-align: right;
 }
 
 main h4 {
-	border-bottom: 2px solid #000;
+	border-bottom: 2px solid @font;
+}
+
+#logo {
+	position: relative;
+}
+
+#particles {
+	position: absolute;
+	top: -30%;
+	left: 30%;
+	width: 40%;
+	height: 200%;
 }
